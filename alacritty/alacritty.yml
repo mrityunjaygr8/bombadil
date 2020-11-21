@@ -1,0 +1,8 @@
+font:
+        size: 11
+        normal:
+                family: IBM Plex Mono Medium
+                style: Regular
+        bold:
+                family: Hack
+                style: Bold
