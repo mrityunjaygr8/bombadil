@@ -1,0 +1,108 @@
+{
+	"name": "ISO",
+	"type": 1,
+	"state": 0,
+	"info": {
+		"category": {
+			"hosts": [
+			],
+			"schemes": [
+			],
+			"file-exts": [
+				"iso"
+			],
+			"active-limit": 3,
+			"finished-limit": 300,
+			"recycled-limit": 300
+		},
+		"http": {
+			"redirection-limit": 30
+		},
+		"proxy": {
+			"port": 80,
+			"type": 0
+		},
+		"common": {
+			"folder": "\/mnt\/Storage\/Downloads\/ISO",
+			"connect-timeout": 15,
+			"transmit-timeout": 30,
+			"retry-delay": 6,
+			"retry-limit": 99,
+			"retry-count": 0,
+			"max-connections": 16,
+			"max-upload-speed": 0,
+			"max-download-speed": 0,
+			"timestamp": 1
+		}
+	},
+	"children": [
+		{
+			"name": "arcolinuxb-awesome-v20.11.9-x86_64.iso",
+			"type": 2,
+			"state": 72,
+			"info": {
+				"relation": {
+					"task": {
+						"plugin-name": "curl",
+						"priority": 1
+					}
+				},
+				"progress": {
+					"complete": 1743126528,
+					"total": 1743126528,
+					"elapsed": 28,
+					"uploaded": 0,
+					"percent": 100
+				},
+				"log": {
+					"added-time": 1605764383,
+					"completed-time": 1605766233,
+					"messages": [
+					]
+				},
+				"http": {
+					"redirection-limit": 30
+				},
+				"proxy": {
+					"port": 80,
+					"type": 0
+				},
+				"common": {
+					"uri": "https:\/\/downloads.sourceforge.net\/project\/arcolinux-community-editions\/awesome\/arcolinuxb-awesome-v20.11.9-x86_64.iso?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Farcolinux-community-editions%2Ffiles%2Fawesome%2Farcolinuxb-awesome-v20.11.9-x86_64.iso%2Fdownload&ts=1605764364&use_mirror=jaist",
+					"file": "arcolinuxb-awesome-v20.11.9-x86_64.iso",
+					"folder": "\/mnt\/Storage\/Downloads\/ISO",
+					"connect-timeout": 15,
+					"transmit-timeout": 30,
+					"retry-delay": 6,
+					"retry-limit": 99,
+					"retry-count": 0,
+					"max-connections": 16,
+					"max-upload-speed": 0,
+					"max-download-speed": 0,
+					"timestamp": 1
+				}
+			},
+			"children": [
+				{
+					"name": "\/mnt\/Storage\/Downloads\/ISO\/arcolinuxb-awesome-v20.11.9-x86_64.iso.aria2",
+					"type": 5,
+					"state": 0,
+					"info": {
+					},
+					"children": [
+					]
+				},
+				{
+					"name": "\/mnt\/Storage\/Downloads\/ISO\/arcolinuxb-awesome-v20.11.9-x86_64.iso",
+					"type": 0,
+					"state": 0,
+					"info": {
+					},
+					"children": [
+					]
+				}
+			]
+		}
+	]
+}
+

@@ -1,0 +1,3 @@
+URxvt*termName:  screen-256color
+URxvt.font: xft:iosevka:size=14
+URxvt.scrollBar: false
