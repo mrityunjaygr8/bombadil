@@ -22,7 +22,7 @@ QtProject = { source = "QtProject.conf", target = ".config/QtProject.conf" }
 remmina-prefs = { source = "remmina-pref", target = ".config/remmina" }
 remmina-items = { source = "remmina-items", target = ".local/share/remmina" }
 rofi = { source = "rofi", target = ".config/rofi" }
-vscodium = { source = "VSCodium", target = ".config/VSCodium"}
+vscodium = { source = "vsc", target = ".config/VSCodium"}
 gtkrc2 = { source = "gtk/gtkrc2", target = ".config/gtkrc-2.0"}
 gtkrc3 = { source = "gtk/gtkrc", target = ".config/gtkrc"}
 gtk2 = { source = "gtk/gtk2", target = ".config/gtk-2.0"}

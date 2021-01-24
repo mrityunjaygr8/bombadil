@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 2
+    },
+    "auditLog": "/home/mrityunjaygr8/.config/VSCodium/User/workspaceStorage/e4e390cbffdc93dd2cca3dd943d00503/redhat.java/.5611e421bc8b35320af0496afc471a989b6fcec6-audit.json",
+    "files": [
+        {
+            "date": 1588233601837,
+            "name": "/home/mrityunjaygr8/.config/VSCodium/User/workspaceStorage/e4e390cbffdc93dd2cca3dd943d00503/redhat.java/client.log.2020-04-30",
+            "hash": "22d94195cc1314d1324eb221323c643d"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "workbench.colorTheme": "Wal",
+    "editor.fontFamily": "'IBM Plex Mono','Iosevka','Mononoki','Monaco','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 16,
+    "workbench.iconTheme": "simple-icons",
+    "terminal.integrated.fontSize": 16,
+    "window.zoomLevel": 0,
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--config=/home/mrityunjaygr8/.config/code/python/setup.cfg"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "autoDocstring.docstringFormat": "sphinx",
+    "tabnine.experimentalAutoImports": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "java.semanticHighlighting.enabled": false,
+    "go.useLanguageServer": true,
+    "go.formatTool": "goimports",
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "192.168.1.193": "linux",
+        "192.168.4.4": "linux"
+    },
+    "editor.renameOnType": true,
+    "terminal.integrated.fontFamily": "IBM Plex Mono Medium",
+    "editor.formatOnSave": true,
+    "python.sortImports.path": "isort",
+    "python.sortImports.args": [
+        "-sp /home/mrityunjaygr8/.config/code/python/setup.cfg"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "rust-client.channel": "stable",
+    "rust-client.rustupPath": "/home/mrityunjaygr8/.cargo/bin/rustup",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "gitlens.views.repositories.files.layout": "list",
+    "editor.copyWithSyntaxHighlighting": false,
+}
