@@ -2,22 +2,22 @@ dotfiles_dir = "bombadil"
 
 [settings]
 vars = [ ]
-hooks = [ "echo 'asd' >> test_bomb " ]
+# hooks = [ "echo 'asd' >> test_bomb " ]
 
 [settings.dots]
-awesome = { source = "awesome", target = "bombadil/bomb_out/.config/awesome" }
-alacritty = { source = "alacritty", target = "bombadil/bomb_out/.config/alacritty" }
-Xresources = { source = "Xresources", target = "bombadil/bomb_out/.Xresources" }
-p10k = { source = "p10k.zsh", target = "bombadil/bomb_out/.p10k.zsh" }
-zshrc = { source = "zshrc", target = "bombadil/bomb_out/.zshrc" }
-gitconfig = { source = "gitconfig", target = "bombadil/bomb_out/.gitconfig" }
-tmux-conf = { source = "tmux.conf", target = "bombadil/bomb_out/.tmux.conf" }
-tmux= { source = "tmux", target = "bombadil/bomb_out/.tmux" }
-wal = { source = "wal", target = "bombadil/bomb_out/.config/wal" }
-nvim = { source = "nvim", target = "bombadil/bomb_out/.config/nvim" }
-picom = { source = "picom", target = "bombadil/bomb_out/.config/picom" }
-dunst = { source = "dunst", target = "bombadil/bomb_out/.config/dunst" }
-uGet = { source = "uGet", target = "bombadil/bomb_out/.config/uGet" }
-QtProject = { source = "QtProject.conf", target = "bombadil/bomb_out/.config/QtProject.conf" }
-remmina-prefs = { source = "remmina-pref", target = "bombadil/bomb_out/.config/remmina" }
-remmina-items = { source = "remmina-items", target = "bombadil/bomb_out/.local/share/remmina" }
+awesome = { source = "awesome", target = ".config/awesome" }
+alacritty = { source = "alacritty", target = ".config/alacritty" }
+Xresources = { source = "Xresources", target = ".Xresources" }
+p10k = { source = "p10k.zsh", target = ".p10k.zsh" }
+zshrc = { source = "zshrc", target = ".zshrc" }
+gitconfig = { source = "gitconfig", target = ".gitconfig" }
+tmux-conf = { source = "tmux.conf", target = ".tmux.conf" }
+tmux= { source = "tmux", target = ".tmux" }
+wal = { source = "wal", target = ".config/wal" }
+nvim = { source = "nvim", target = ".config/nvim" }
+picom = { source = "picom", target = ".config/picom" }
+dunst = { source = "dunst", target = ".config/dunst" }
+uGet = { source = "uGet", target = ".config/uGet" }
+QtProject = { source = "QtProject.conf", target = ".config/QtProject.conf" }
+remmina-prefs = { source = "remmina-pref", target = ".config/remmina" }
+remmina-items = { source = "remmina-items", target = ".local/share/remmina" }

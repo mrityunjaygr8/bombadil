@@ -1,7 +1,8 @@
 font:
-        size: 11
+        size: 12
         normal:
-                family: IBM Plex Mono Medium
+                # family: IBM Plex Mono Medium
+                family: Hack Nerd Font Mono
                 style: Regular
         bold:
                 family: Hack
