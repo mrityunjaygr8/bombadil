@@ -1,1 +1,0 @@
-/home/mrityunjaygr8/.cache/wal/colors.lua
