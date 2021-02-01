@@ -43,6 +43,8 @@ PATH=$HOME/.gem/ruby/3.7.0/bin:$HOME/bin:$HOME/.poetry/bin:$HOME/.cargo/bin:$HOM
 # git-style diff
 function gdiff() { diff -u $@ | colordiff | less -R; }
 
+(cat $HOME/.cache/wal/sequences &)
+
 # Creating Aliases
 alias ls='exa --color'
 # alias ll='ls -alt --color=auto'
@@ -80,7 +82,6 @@ zplug "zsh-users/zsh-history-substring-search", defer:3
 
 zplug load
 
-(cat $HOME/.cache/wal/sequences &)
 # eval "$(starship init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
