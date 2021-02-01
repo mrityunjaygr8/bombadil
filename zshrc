@@ -33,6 +33,9 @@ export PROJECT_HOME=$HOME/Devel
 source $HOME/.local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
+export EDITOR='nvim'
+export VISUAL='nvim'
+
 # GO-Path
 export GOPATH=$HOME/go
 PATH=$HOME/.gem/ruby/3.7.0/bin:$HOME/bin:$HOME/.poetry/bin:$HOME/.cargo/bin:$HOME/.npm-global/bin:$PATH
