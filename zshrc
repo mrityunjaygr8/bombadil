@@ -54,9 +54,9 @@ alias wdil='history | grep'
 alias scp='rsync --progress -- verbose --partial'
 # alias cat='bat'
 
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
+alias grep='rg'
+alias egrep='grep'
+alias fgrep='grep'
 
 alias df='df -h'
 
