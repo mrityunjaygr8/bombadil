@@ -44,13 +44,15 @@ PATH=$HOME/.gem/ruby/3.7.0/bin:$HOME/bin:$HOME/.poetry/bin:$HOME/.cargo/bin:$HOM
 function gdiff() { diff -u $@ | colordiff | less -R; }
 
 # Creating Aliases
-alias ls='ls --color=auto'
-alias ll='ls -alt --color=auto'
+alias ls='exa --color'
+# alias ll='ls -alt --color=auto'
+alias ll='exa --long --all --group-directories-first'
 alias vim='nvim'
 alias netstat='ss'
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias wdil='history | grep'
 alias scp='rsync --progress -- verbose --partial'
+# alias cat='bat'
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
