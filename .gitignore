@@ -1,3 +1,4 @@
 .dots
+hooks/packages.out*
 bomb_out
 VSCodium/
