@@ -1,4 +1,4 @@
 .dots
-hooks/packages.out*
+hooks/*pkglist.out*
 bomb_out
 VSCodium/
