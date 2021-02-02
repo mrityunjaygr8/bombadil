@@ -1,6 +1,9 @@
 MY_USER=mrityunjaygr8
-OUT_FILE="/home/$MY_USER/bombadil/hooks/packages.out"
-/usr/bin/pacman -Qqen > "$OUT_FILE" 
-chown "$MY_USER":"$MY_USER" "$OUT_FILE"
-echo "packages written to $OUT_FILE"
+PACMAN_PKGLIST="/home/$MY_USER/bombadil/hooks/pacman_pkglist.out"
+AUR_PKGLIST="/home/$MY_USER/bombadil/hooks/aur_pkglist.out"
+/usr/bin/pacman -Qqen > "$PACMAN_PKGLIST" 
+/usr/bin/pacman -Qqem > "$AUR_PKGLIST"
+chown "$MY_USER":"$MY_USER" "$PACMAN_PKGLIST"
+chown "$MY_USER":"$MY_USER" "$AUR_PKGLIST"
+echo "packages written to $PACMAN_PKGLIST and $AUR_PKGLIST"
 
