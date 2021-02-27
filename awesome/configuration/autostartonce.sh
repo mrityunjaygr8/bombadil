@@ -12,7 +12,7 @@
 # to allow out of tree autostart programs
 APPS=(
     # keepassxc
-    kdeconnect-indicator
+    # kdeconnect-indicator
     # radeon-profile
     # $HOME/.config/awesomestart
 )
