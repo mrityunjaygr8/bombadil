@@ -124,13 +124,6 @@ local function xrandr()
       label, action = next[1], next[2]
    end
    print(label, action)
-   --spawn("echo 'one' >> /home/mrityunjaygr8/xrandr_log.txt")
-   --state.cid = naughty.notify({ text = label,
-   --                             icon = icon_path,
-   --                             timeout = 4,
-   --                             screen = mouse.screen,
-   --                             replaces_id = state.cid,
-   --                             destroy = naughty_destroy_callback}).id
    naughty.notification({ 
 	   message = next,
            icon = icon_path,
