@@ -30,7 +30,7 @@ TERM=xterm-256color
 # Virtualenvwrapper config
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source $HOME/.local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 export EDITOR='nvim'
