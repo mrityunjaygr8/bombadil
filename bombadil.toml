@@ -28,7 +28,7 @@ gtkrc3 = { source = "gtk/gtkrc", target = ".config/gtkrc"}
 gtk2 = { source = "gtk/gtk2", target = ".config/gtk-2.0"}
 gtk3 = { source = "gtk/gtk3", target = ".config/gtk-3.0"}
 lock = { source = "lock.sh", target = ".config/lock.sh" }
-wal = { source = "wallpaper.sh", "wallpaper.sh" }
+wallpaper = { source = "wallpaper.sh", target = "wallpaper.sh" }
 
 #  need to add .cache/wal to this so that the color schemes can work on the new system, and do not break vim,
 #  zsh, awesome, rofi etc
