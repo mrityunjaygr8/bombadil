@@ -27,7 +27,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        sh -c "/home/mrityunjaygr8/.config/lock.sh"
+        sh -c "$HOME/.config/lock.sh"
         ;;
     $suspend)
         mpc -q pause
@@ -35,7 +35,7 @@ case $chosen in
         systemctl suspend
         ;;
     $logout)
-        loginctl terminate-user mrityunjaygr8
+        loginctl terminate-user "$USER"
         ;;
 esac
 
