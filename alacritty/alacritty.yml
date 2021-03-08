@@ -7,3 +7,6 @@ font:
         bold:
                 family: Hack
                 style: Bold
+
+shell:
+        program: /bin/fish
