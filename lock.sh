@@ -3,7 +3,7 @@
 pictures_dir="$(xdg-user-dir PICTURES 2> /dev/null)"
 slice="${pictures_dir:-$HOME/Pictures}slice.png"
 # lock="${pictures_dir:-$HOME/Pictures}/lock.png"
-image=$(< /home/mrityunjaygr8/.cache/wal/wal)
+image=$(< $HOME/.cache/wal/wal)
 echo "$image"
 #trap 'rm -f "$image"' SIGINT SIGTERM EXIT
 
