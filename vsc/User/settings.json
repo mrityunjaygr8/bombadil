@@ -1,6 +1,6 @@
 {
     "workbench.startupEditor": "newUntitledFile",
-    "terminal.integrated.shell.linux": "/bin/zsh",
+    "terminal.integrated.shell.linux": "/bin/fish",
     "workbench.colorTheme": "Wal",
     "editor.fontFamily": "'IBM Plex Mono','Iosevka','Mononoki','Monaco','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontSize": 16,
