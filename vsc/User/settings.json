@@ -49,4 +49,7 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "gitlens.views.repositories.files.layout": "list",
     "editor.copyWithSyntaxHighlighting": false,
+    "editor.fontLigatures": true,
+    "vim.overrideCopy": true,
+    "vim.useSystemClipboard": true
 }
