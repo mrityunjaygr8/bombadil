@@ -67,6 +67,8 @@ awful.rules.rules = {
 
     { rule = { class = "Insomnia" },
       properties = { tag = "api" } },
+    { rule = { class = "Microsoft Teams" },
+      properties = { tag = "teams" } },
 }
 -- }}}
 
