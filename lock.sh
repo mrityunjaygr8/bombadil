@@ -41,35 +41,35 @@ echo "$image"
 i3lock \
     --color=282828 \
     --image="$image" \
-    --insidecolor=282828FF \
-    --insidevercolor=FABD2FFF \
-    --insidewrongcolor=FB4934FF \
-    --ringcolor=282828FF \
-    --ringvercolor=282828FF \
-    --ringwrongcolor=282828FF \
-    --linecolor=EBDBB2FF \
-    --keyhlcolor=EBDBB2FF \
-    --bshlcolor=FB4935FF \
-    --separatorcolor=282828FF \
-    --verifcolor=00000000 \
-    --wrongcolor=00000000 \
-    --layoutcolor=00000000 \
-    --timecolor=EBDBB2FF \
-    --datecolor=00000000 \
-    --indpos='x+100:y+720' \
-    --timepos='x+280:y+732' \
-    --timestr='%H:%M:%S' \
+    --inside-color=282828FF \
+    --insidever-color=FABD2FFF \
+    --insidewrong-color=FB4934FF \
+    --ring-color=282828FF \
+    --ringver-color=282828FF \
+    --ringwrong-color=282828FF \
+    --line-color=EBDBB2FF \
+    --keyhl-color=EBDBB2FF \
+    --bshl-color=FB4935FF \
+    --separator-color=282828FF \
+    --verif-color=00000000 \
+    --wrong-color=00000000 \
+    --layout-color=00000000 \
+    --time-color=EBDBB2FF \
+    --date-color=00000000 \
+    --ind-pos='x+100:y+720' \
+    --time-pos='x+280:y+732' \
+    --time-str='%H:%M:%S' \
     --time-font='monospace' \
     --tiling \
-    --timesize=32 \
+    --time-size=32 \
     --radius=32 \
     --ring-width=4 \
-    --greetertext='' \
-    --veriftext='' \
-    --wrongtext='' \
-    --noinputtext='' \
-    --locktext='' \
-    --lockfailedtext='' \
+    --greeter-text='' \
+    --verif-text='' \
+    --wrong-text='' \
+    --noinput-text='' \
+    --lock-text='' \
+    --lockfailed-text='' \
     --indicator \
     --ignore-empty-password \
     --pass-media-keys \
