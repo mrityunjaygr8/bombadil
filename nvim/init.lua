@@ -40,6 +40,21 @@ require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  use 'Tastyep/structlog.nvim'
+  -- Lua
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+  use 'glepnir/dashboard-nvim'
+
+
 
   use {
     'numToStr/Comment.nvim',
@@ -56,6 +71,7 @@ require('packer').startup(function()
     'romgrk/barbar.nvim',
     requires = {'kyazdani42/nvim-web-devicons'}
   }
+  use 'windwp/nvim-autopairs'
 
 end)
 
@@ -130,6 +146,7 @@ vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
 vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
 vim.g.indent_blankline_char_highlight = 'LineNr'
 vim.g.indent_blankline_show_trailing_blankline_indent = false
+vim.g.dashboard_default_executive="telescope"
 
 -- Gitsigns
 require('gitsigns').setup {
@@ -297,15 +314,6 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
--- -- Enable the following language servers
--- local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' , 'bashls', 'gopls'}
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     capabilities = capabilities,
---   }
--- end
-
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.on_server_ready(function(server)
@@ -313,11 +321,6 @@ lsp_installer.on_server_ready(function(server)
     	on_attach = on_attach,
     	capabilities = capabilities,
     }
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
 
     server:setup(opts)
     vim.cmd [[ do User LspAttachBuffers ]]
@@ -372,3 +375,16 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+
+-- you need setup cmp first put this after cmp.setup()
+require("nvim-autopairs.completion.cmp").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
+  auto_select = true, -- automatically select the first item
+  insert = false, -- use insert confirm behavior instead of replace
+  map_char = { -- modifies the function or method delimiter by filetypes
+    all = '(',
+    tex = '{'
+  }
+})
+
