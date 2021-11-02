@@ -76,6 +76,7 @@ require('packer').startup(function()
   use 'tpope/vim-endwise'
   use 'rstacruz/vim-closer'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'chemzqm/vim-jsx-improve'
 
 
 end)
