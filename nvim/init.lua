@@ -77,7 +77,8 @@ require('packer').startup(function()
   use 'rstacruz/vim-closer'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'chemzqm/vim-jsx-improve'
-  use "numtostr/FTerm.nvim"
+  use 'numtostr/FTerm.nvim'
+  use 'christoomey/vim-system-copy'
 
 
 end)
