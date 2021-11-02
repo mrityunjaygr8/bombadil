@@ -77,6 +77,7 @@ require('packer').startup(function()
   use 'rstacruz/vim-closer'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'chemzqm/vim-jsx-improve'
+  use "numtostr/FTerm.nvim"
 
 
 end)
@@ -236,7 +237,8 @@ vim.api.nvim_set_keymap('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>',{ nor
 vim.api.nvim_set_keymap('n', '<Space>bd', ':BufferOrderByDirectory<CR>',{ noremap = true})
 vim.api.nvim_set_keymap('n', '<Space>bl', ':BufferOrderByLanguage<CR>',{ noremap = true})
 -- vim.api.nvim_set_keymap('v', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true})
-
+vim.api.nvim_set_keymap('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true})
 
 -- Treesitter configuration
 -- Parsers must be installed manually via :TSInstall
