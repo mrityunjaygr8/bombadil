@@ -79,8 +79,7 @@ require('packer').startup(function()
   use 'chemzqm/vim-jsx-improve'
   use 'numtostr/FTerm.nvim'
   use 'christoomey/vim-system-copy'
-
-
+  use 'nathom/filetype.nvim'
 end)
 
 --Incremental live completion (note: this is now a default on master)
@@ -112,6 +111,9 @@ vim.o.smartcase = true
 --Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+-- Disable filetype.vim in favor of filetype.nvim
+vim.g.did_load_filetypes = 1
 
 --Set colorscheme (order is important here)
 vim.o.termguicolors = true
