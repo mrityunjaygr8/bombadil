@@ -131,6 +131,7 @@ vim.g.lightline = {
 vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.gutentags_cache_dir = '$HOME/.cache'
 
 --Remap for dealing with word wrap
 vim.api.nvim_set_keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
