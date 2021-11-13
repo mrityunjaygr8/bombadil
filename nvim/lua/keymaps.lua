@@ -18,7 +18,7 @@ map('n', '<leader>st', [[<cmd>lua require('telescope.builtin').tags()<CR>]], { n
 map('n', '<leader>sd', [[<cmd>lua require('telescope.builtin').grep_string()<CR>]], { noremap = true, silent = true })
 map('n', '<leader>sl', [[<cmd>lua require('telescope.builtin').live_grep()<CR>]], { noremap = true, silent = true })
 map('n', '<leader>so', [[<cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>]], { noremap = true, silent = true })
-map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true }) 
+map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], { noremap = true, silent = true })
 
 
 -- Enable lazygit
@@ -69,15 +69,15 @@ map('n', '<Space>bl', ':BufferOrderByLanguage<CR>',{ noremap = true})
 
 
 -- LSP Saga
-map("n", "<Leader>cf", ":Lspsaga lsp_finder<CR>", { silent = true })
-map("n", "<leader>ca", ":Lspsaga code_action<CR>", { silent = true })
-map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", { silent = true })
-map("n", "<leader>ch", ":Lspsaga hover_doc<CR>", { silent = true })
+map("n", "<Leader>gr", ":lua require('lspsaga.provider').lsp_finder()<CR>", { silent = true })
+map("n", "<Leader>ca", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", { silent = true })
+map("v", "<Leader>ca", ":<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>", { silent = true })
+map("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", { silent = true })
 map("n", "<leader>ck", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>', { silent = true })
 map("n", "<leader>cj", '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>', { silent = true })
-map("n", "<leader>cs", ":Lspsaga signature_help<CR>", { silent = true })
-map("n", "<leader>ci", ":Lspsaga show_line_diagnostics<CR>", { silent = true })
+map("n", "<leader>cs", "<cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>", { silent = true })
+map("n", "<leader>ci", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", { silent = true })
 map("n", "<leader>cn", ":Lspsaga diagnostic_jump_next<CR>", { silent = true })
 map("n", "<leader>cp", ":Lspsaga diagnostic_jump_prev<CR>", { silent = true })
-map("n", "<leader>cr", ":Lspsaga rename<CR>", { silent = true })
-map("n", "<leader>cd", ":Lspsaga preview_definition<CR>", { silent = true })
+map("n", "<leader>gR", "<cmd>lua require('lspsaga.rename').rename()<CR>", { silent = true })
+map("n", "<leader>gd", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>", { silent = true })
