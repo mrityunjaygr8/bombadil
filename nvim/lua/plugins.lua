@@ -21,17 +21,6 @@ return require('packer').startup(function(use)
 
   -- Themes start
   use 'EdenEast/nightfox.nvim'
-  use 'marko-cerovac/material.nvim'
-  use 'Yagua/nebulous.nvim'
-  use 'folke/tokyonight.nvim'
-  use 'rktjmp/lush.nvim'
-  use 'metalelf0/jellybeans-nvim'
-  use 'olimorris/onedarkpro.nvim'
-  use 'pineapplegiant/spaceduck'
-  use 'mangeshrex/uwu.vim'
-  use 'wojciechkepka/vim-github-dark'
-  use 'tjdevries/colorbuddy.vim'
-  use 'Th3Whit3Wolf/onebuddy'
   -- Themes end
   use 'nathom/filetype.nvim'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
