@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   }
   use 'RRethy/vim-illuminate'
   use 'christoomey/vim-system-copy'
-  use 'tami5/lspsaga.nvim'
+  use {'tami5/lspsaga.nvim', branch = "nvim51"}
 
 
   -- Automatically set up your configuration after cloning packer.nvim
