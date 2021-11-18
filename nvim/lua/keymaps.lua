@@ -22,7 +22,7 @@ map('n', '<leader>?', [[<cmd>lua require('telescope.builtin').oldfiles()<CR>]], 
 
 
 -- Enable lazygit
-map('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true}) 
+map('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true})
 
 -- vim.api.nvim_set_keymap('v', '<leader>e', ':NvimTreeToggle<CR>', {noremap = true})
 map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true})
@@ -81,3 +81,4 @@ map("n", "<leader>cn", ":Lspsaga diagnostic_jump_next<CR>", { silent = true })
 map("n", "<leader>cp", ":Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 map("n", "<leader>gR", "<cmd>lua require('lspsaga.rename').rename()<CR>", { silent = true })
 map("n", "<leader>gd", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>", { silent = true })
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
