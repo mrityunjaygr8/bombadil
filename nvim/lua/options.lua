@@ -1,6 +1,15 @@
 -- Do not source the default filetype.vim
 vim.g.did_load_filetypes = 1
 
+vim.g.expandtab = true
+vim.g.shiftwidth = 4
+vim.g.tabstop = 4
+vim.g.hidden = true
+
+vim.wo.signcolumn="yes:2"
+
+vim.cmd('set clipboard=unnamedplus')
+
 --Map blankline
 vim.g.indent_blankline_char = '┊'
 vim.g.indent_blankline_filetype_exclude = { 'help', 'packer' }
