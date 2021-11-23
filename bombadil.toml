@@ -30,5 +30,7 @@ gtk3 = { source = "gtk/gtk3", target = ".config/gtk-3.0"}
 lock = { source = "lock.sh", target = ".config/lock.sh" }
 wallpaper = { source = "wallpaper.sh", target = "wallpaper.sh" }
 code = {source="code", target = ".config/code"}
+dwm = { source = "dwm.sh", target = "dwm.sh"}
+
 #  need to add .cache/wal to this so that the color schemes can work on the new system, and do not break vim,
 #  zsh, awesome, rofi etc
