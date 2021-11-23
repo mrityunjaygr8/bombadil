@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=dwm-session
+Comment=My DWM Session
+Exec=$HOME/dwm.sh
+Type=Application
