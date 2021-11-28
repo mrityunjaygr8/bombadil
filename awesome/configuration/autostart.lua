@@ -5,7 +5,7 @@ local filesystem = require('gears.filesystem')
 return {
   run_on_start_up = {
 
-    'picom --config ' .. filesystem.get_configuration_dir() .. 'configuration/picom.conf',
+    'picom --config ' .. filesystem.get_configuration_dir() .. 'picom/picom.conf',
     'nm-applet --indicator', -- wifi
     'mate-power-manager', -- Power manager
     'pasystray', -- PulseAudio Systray Application
