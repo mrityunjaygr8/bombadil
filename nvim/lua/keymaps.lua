@@ -82,3 +82,5 @@ map("n", "<leader>cp", ":Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 map("n", "<leader>gR", "<cmd>lua require('lspsaga.rename').rename()<CR>", { silent = true })
 map("n", "<leader>gd", "<cmd>lua require('lspsaga.provider').preview_definition()<CR>", { silent = true })
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
+
+map('n', '<leader>f', "<cmd> :Format<CR>", { silent = true })
