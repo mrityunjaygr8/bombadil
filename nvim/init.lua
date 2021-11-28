@@ -30,6 +30,7 @@ require('config.nvim-treesitter')
 require('config.lsp')
 require('config.cmp')
 require('config.lspsaga')
+require('config.formatter')
 
 require("keymaps")
 
