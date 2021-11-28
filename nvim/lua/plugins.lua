@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-system-copy'
   use {'tami5/lspsaga.nvim', branch = "nvim51"}
   use { 'tpope/vim-surround' }
+  use 'mhartington/formatter.nvim'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
