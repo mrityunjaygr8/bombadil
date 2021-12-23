@@ -68,3 +68,10 @@ vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.js,*.rs,*.lua,*.py,*.tsx,*.ts FormatWrite
+augroup END
+]], true)
+
