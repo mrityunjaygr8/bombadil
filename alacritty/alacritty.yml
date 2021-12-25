@@ -3,10 +3,11 @@ font:
   normal:
     # family: IBM Plex Mono Medium
     # family: Hack Nerd Font Mono
-    family: JetBrains Mono
+    # family: JetBrains Mono
+    family: Recursive Mono Linear Static
     style: Regular
   bold:
-    family: Hack
+    family: Recursive Mono Linear Static
     style: Bold
 
 shell:
