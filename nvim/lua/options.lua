@@ -2,8 +2,8 @@
 vim.g.did_load_filetypes = 1
 
 vim.g.expandtab = true
-vim.g.shiftwidth = 4
-vim.g.tabstop = 4
+vim.g.shiftwidth = 2
+vim.g.tabstop = 2
 vim.g.hidden = true
 
 vim.wo.signcolumn="yes:2"
