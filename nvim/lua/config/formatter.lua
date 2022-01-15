@@ -61,5 +61,14 @@ require("formatter").setup({
         }
       end,
     },
+    go = {
+      function()
+        return {
+          exe = "goimports",
+          args = { "-w", vim.api.nvim_buf_get_name(0) },
+          stdin = false,
+        }
+      end,
+    },
   },
 })
