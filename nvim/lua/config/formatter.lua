@@ -70,5 +70,14 @@ require("formatter").setup({
         }
       end,
     },
+    rust = {
+      rustfmt = function()
+        return {
+          exe = "rustfmt",
+          args = { "--emit=stdout" },
+          stdin = true,
+        }
+      end,
+    },
   },
 })
