@@ -102,3 +102,5 @@ map("n", "<Space>bl", ":BufferOrderByLanguage<CR>", { noremap = true })
 -- map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
 
 map("n", "<leader>f", "<cmd> :Format<CR>", { silent = true })
+
+map("n", "<leader>ng", "<cmd>:Neogen<CR>", { silent = true })
