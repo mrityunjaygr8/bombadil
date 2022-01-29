@@ -1,6 +1,5 @@
 -- luasnip setup
 local luasnip = require("luasnip")
-local cmp_autocomplete = require("nvim-autopairs.completion.cmp")
 
 -- nvim-cmp setup
 local cmp = require("cmp")
@@ -45,4 +44,3 @@ cmp.setup({
     { name = "luasnip" },
   },
 })
-cmp.event:on("confirm_done", cmp_autocomplete.on_confirm_done({ map_chat = { tex = "" } }))

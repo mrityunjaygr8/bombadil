@@ -80,12 +80,6 @@ return require("packer").startup(function(use)
     end,
     requires = "nvim-treesitter/nvim-treesitter",
   })
-  use({
-    "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup({ map_cr = true })
-    end,
-  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
