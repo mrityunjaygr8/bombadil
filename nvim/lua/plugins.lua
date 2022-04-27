@@ -96,6 +96,9 @@ function M.setup()
 			 config = function()
 				 require("config.treesitter").setup()
 			 end,
+			 requires = {
+				{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			},
 		}
 		use({
 			"catppuccin/nvim",
@@ -123,6 +126,124 @@ function M.setup()
 			wants = "nvim-web-devicons",
 			config = function()
 				require("config.bufferline").setup()
+			end,
+		}
+		use "chaoren/vim-wordmotion"
+		-- Auto pairs
+		use {
+			"windwp/nvim-autopairs",
+			wants = "nvim-treesitter",
+			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			config = function()
+				require("config.autopairs").setup()
+			end,
+		}
+		-- Auto tag
+		use {
+			"windwp/nvim-ts-autotag",
+			wants = "nvim-treesitter",
+			event = "InsertEnter",
+			config = function()
+				require("nvim-ts-autotag").setup { enable = true }
+			end,
+		}
+		use {
+			"hrsh7th/nvim-cmp",
+			event = "InsertEnter",
+			opt = true,
+			config = function()
+				require("config.cmp").setup()
+			end,
+			wants = { "LuaSnip" },
+			requires = {
+				"hrsh7th/cmp-buffer",
+				"hrsh7th/cmp-path",
+				"hrsh7th/cmp-nvim-lua",
+				"ray-x/cmp-treesitter",
+				"hrsh7th/cmp-cmdline",
+				"saadparwaiz1/cmp_luasnip",
+				"hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-nvim-lsp-signature-help",
+				{
+					"L3MON4D3/LuaSnip",
+					wants = "friendly-snippets",
+					config = function()
+						require("config.luasnip").setup()
+					end,
+				},
+				"rafamadriz/friendly-snippets",
+			},
+			disable = false,
+		}
+		-- LSP
+		use {
+			"neovim/nvim-lspconfig",
+			opt = true,
+			event = "BufReadPre",
+			wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate" },
+			config = function()
+				require("config.lsp").setup()
+			end,
+			requires = {
+				"williamboman/nvim-lsp-installer",
+				"folke/lua-dev.nvim",
+				"RRethy/vim-illuminate",
+			},
+		}
+
+		use {
+			"nvim-telescope/telescope.nvim",
+			opt = true,
+			config = function()
+				require("config.telescope").setup()
+			end,
+			cmd = { "Telescope" },
+			module = "telescope",
+			keys = { "<leader>f", "<leader>p" },
+			wants = {
+				"plenary.nvim",
+				"popup.nvim",
+				"telescope-fzf-native.nvim",
+				"telescope-project.nvim",
+				"telescope-repo.nvim",
+				"telescope-file-browser.nvim",
+				"project.nvim",
+			},
+			requires = {
+				"nvim-lua/popup.nvim",
+				"nvim-lua/plenary.nvim",
+				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+				"nvim-telescope/telescope-project.nvim",
+				"cljoly/telescope-repo.nvim",
+				"nvim-telescope/telescope-file-browser.nvim",
+				{
+					"ahmedkhalf/project.nvim",
+					config = function()
+						require("project_nvim").setup {}
+					end,
+				},
+			},
+		}
+		-- trouble.nvim
+		use {
+			"folke/trouble.nvim",
+			event = "BufReadPre",
+			wants = "nvim-web-devicons",
+			cmd = { "TroubleToggle", "Trouble" },
+			config = function()
+				require("trouble").setup {
+					use_diagnostic_signs = true,
+				}
+			end,
+		}
+
+		-- lspsaga.nvim
+		use {
+			"tami5/lspsaga.nvim",
+			event = "VimEnter",
+			cmd = { "Lspsaga" },
+			config = function()
+				require("lspsaga").setup {}
 			end,
 		}
 
