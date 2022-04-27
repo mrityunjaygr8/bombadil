@@ -1,89 +1,142 @@
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
+local M = {}
+
+function M.setup()
+  -- Indicate first time installation
+  local packer_bootstrap = false
+
+  -- packer.nvim configuration
+  local conf = {
+    display = {
+      open_fn = function()
+        return require("packer.util").float { border = "rounded" }
+      end,
+    },
+		profile = {
+			enable = true,
+			threshold = 0
+		},
+  }
+
+  -- Check if packer.nvim is installed
+  -- Run PackerCompile if there are changes in this file
+  local function packer_init()
+    local fn = vim.fn
+    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    if fn.empty(fn.glob(install_path)) > 0 then
+      packer_bootstrap = fn.system {
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        install_path,
+      }
+      vim.cmd [[packadd packer.nvim]]
+    end
+    vim.cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
+  end
+
+  -- Plugins
+  local function plugins(use)
+    use { "wbthomason/packer.nvim" }
+		use { "nvim-lua/plenary.nvim", module = "plenary" }
+		-- WhichKey
+		use {
+			 "folke/which-key.nvim",
+			 event = "VimEnter",
+			 config = function()
+			   require("config.whichkey").setup()
+			 end,
+		}
+		use {
+			"lukas-reineke/indent-blankline.nvim",
+			event = "BufReadPre",
+			config = function()
+				require("config.indentblankline").setup()
+			end,
+		}
+
+		-- Better icons
+    use {
+      "kyazdani42/nvim-web-devicons",
+      module = "nvim-web-devicons",
+      config = function()
+        require("nvim-web-devicons").setup { default = true }
+      end,
+    }
+
+		-- Better Comment
+    use {
+      "numToStr/Comment.nvim",
+      opt = true,
+      keys = { "gc", "gcc", "gbc" },
+      config = function()
+        require("Comment").setup {}
+      end,
+    }
+		use {
+			"nvim-lualine/lualine.nvim",
+			event = "VimEnter",
+			config = function()
+			 require("config.lualine").setup()
+			end,
+			requires = { "nvim-web-devicons" },
+		}
+		use {
+			"SmiteshP/nvim-gps",
+			requires = "nvim-treesitter/nvim-treesitter",
+			module = "nvim-gps",
+			config = function()
+				require("nvim-gps").setup()
+			end,
+		}
+		use {
+			"nvim-treesitter/nvim-treesitter",
+			 run = ":TSUpdate",
+			 config = function()
+				 require("config.treesitter").setup()
+			 end,
+		}
+		use({
+			"catppuccin/nvim",
+			as = "catppuccin"
+		})
+		use {
+		 "ibhagwan/fzf-lua",
+			requires = { "kyazdani42/nvim-web-devicons" },
+		}
+		use {
+		 "kyazdani42/nvim-tree.lua",
+		 requires = {
+			 "kyazdani42/nvim-web-devicons",
+		 },
+		 cmd = { "NvimTreeToggle", "NvimTreeClose" },
+			 config = function()
+				 require("config.nvimtree").setup()
+			 end,
+		}
+
+		-- Buffer line
+		use {
+			"akinsho/nvim-bufferline.lua",
+			event = "BufReadPre",
+			wants = "nvim-web-devicons",
+			config = function()
+				require("config.bufferline").setup()
+			end,
+		}
+
+    if packer_bootstrap then
+      print "Restart Neovim required after installation!"
+      require("packer").sync()
+    end
+  end
+
+  packer_init()
+
+  local packer = require "packer"
+  packer.init(conf)
+  packer.startup(plugins)
 end
 
-local use = require("packer").use
-return require("packer").startup(function(use)
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
-  use("wbthomason/packer.nvim")
-  use("lewis6991/impatient.nvim")
-  use("tpope/vim-commentary") -- "gc" to comment visual regions/lines
-  -- use 'ludovicchabant/vim-gutentags' -- Automatic tags management
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    cmd = "Telescope",
-    module = "telescope",
-  })
-  use({
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
-  })
-
-  -- Themes start
-  use("EdenEast/nightfox.nvim")
-  use({ "catppuccin/nvim", as = "catppuccin" })
-
-  -- Themes end
-  use("nathom/filetype.nvim")
-  use({ "lewis6991/gitsigns.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
-  use("lukas-reineke/indent-blankline.nvim")
-  use({ "nvim-treesitter/nvim-treesitter" })
-  -- Additional textobjects for treesitter
-  use("nvim-treesitter/nvim-treesitter-textobjects")
-  use("neovim/nvim-lspconfig") -- Collection of configurations for built-in LSP client
-  use("williamboman/nvim-lsp-installer")
-  use("hrsh7th/nvim-cmp") -- Autocompletion plugin
-  use("hrsh7th/cmp-nvim-lsp")
-  use("saadparwaiz1/cmp_luasnip")
-  use("L3MON4D3/LuaSnip") -- Snippets plugin
-
-  use("tpope/vim-sleuth")
-  use({
-    "kyazdani42/nvim-tree.lua",
-    requires = "kyazdani42/nvim-web-devicons",
-  })
-  use("dstein64/vim-startuptime")
-  use("kdheepak/lazygit.nvim")
-  use("numtostr/FTerm.nvim")
-  use("chaoren/vim-wordmotion")
-  use({
-    "romgrk/barbar.nvim",
-    requires = { "kyazdani42/nvim-web-devicons" },
-  })
-  use("RRethy/vim-illuminate")
-  use("christoomey/vim-system-copy")
-  use({ "glepnir/lspsaga.nvim" })
-  use({ "tpope/vim-surround" })
-  use("mhartington/formatter.nvim")
-  use({
-    "danymat/neogen",
-    config = function()
-      require("neogen").setup({
-        enabled = true,
-        languages = {
-          typescriptreact = require("neogen.configurations.typescript"),
-        },
-      })
-    end,
-    requires = "nvim-treesitter/nvim-treesitter",
-  })
-
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require("packer").sync()
-  end
-end)
+return M
