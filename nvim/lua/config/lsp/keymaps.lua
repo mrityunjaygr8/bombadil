@@ -5,7 +5,6 @@ local whichkey = require "which-key"
 local keymap = vim.keymap.set
 
 local function keymappings(client, bufnr)
-	local opts = { noremap = true, silent = true }
 
 	-- Key mappings
 	keymap("n", "K", vim.lsp.buf.hover, { buffer = 0 })
@@ -19,7 +18,7 @@ local function keymappings(client, bufnr)
 		l = {
 			name = "Code",
 			R = { "<cmd>Trouble lsp_references<cr>", "Trouble References" },
-			a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
+			a = { require('lspsaga.codeaction').code_action, "Code Action" },
 			d = { "<cmd>Telescope diagnostics<CR>", "Diagnostics" },
 			f = { "<cmd>Lspsaga lsp_finder<CR>", "Finder" },
 			i = { "<cmd>LspInfo<CR>", "Lsp Info" },

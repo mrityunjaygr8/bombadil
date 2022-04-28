@@ -23,6 +23,8 @@ function M.setup()
     ["w"] = { "<cmd>update!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
 
+		["G"] = {"<cmd>LazyGit<CR>", "LazyGit"},
+
     b = {
       name = "Buffer",
       c = { "<Cmd>bd!<Cr>", "Close current buffer" },
