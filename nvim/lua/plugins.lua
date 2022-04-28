@@ -180,7 +180,7 @@ function M.setup()
 			"neovim/nvim-lspconfig",
 			opt = true,
 			event = "BufReadPre",
-			wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate", "null-ls.nvim" },
+			wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate", "null-ls.nvim", "schemastore.nvim", "nvim-lsp-ts-utils" },
 			config = function()
 				require("config.lsp").setup()
 			end,
@@ -195,6 +195,8 @@ function M.setup()
 						require("fidget").setup {}
 					end,
 				},
+				"b0o/schemastore.nvim",
+				"jose-elias-alvarez/nvim-lsp-ts-utils",
 			},
 		}
 
