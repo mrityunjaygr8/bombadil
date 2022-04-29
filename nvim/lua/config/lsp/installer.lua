@@ -14,6 +14,7 @@ function M.setup(servers, options)
 					opts = require("lua-dev").setup { lspconfig = opts }
 				end
 				server:setup(opts)
+				utils.info(server.name, " is ready.")
 			end)
 
 			if not server:is_installed() then

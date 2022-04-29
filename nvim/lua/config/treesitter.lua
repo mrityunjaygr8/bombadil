@@ -1,18 +1,35 @@
 local M = {}
 
 function M.setup()
-  require("nvim-treesitter.configs").setup {
-    -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-    ensure_installed = "all",
+	require("nvim-treesitter.configs").setup {
+		context_commentstring = { enable = true },
+		-- One of "all", "maintained" (parsers with maintainers), or a list of languages
+		ensure_installed = "all",
 
-    -- Install languages synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+		-- Install languages synchronously (only applied to `ensure_installed`)
+		sync_install = false,
 
-    highlight = {
-      -- `false` will disable the whole extension
-      enable = true,
-    },
-				-- nvim-treesitter-textobjects
+		-- highlight = {
+		-- 	-- `false` will disable the whole extension
+		-- 	enable = true,
+		-- },
+		rainbow = {
+			enable = true,
+			-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+			extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+			max_file_lines = nil, -- Do not enable for files with more than n lines, int
+			-- colors = {}, -- table of hex strings
+			-- termcolors = {} -- table of colour name strings
+		},
+
+		textsubjects = {
+			enable = true,
+			keymaps = {
+				['.'] = 'textsubjects-smart',
+				[';'] = 'textsubjects-container-outer',
+			}
+		},
+		-- nvim-treesitter-textobjects
 		textobjects = {
 			select = {
 				enable = true,
@@ -69,7 +86,7 @@ function M.setup()
 				},
 			},
 		},
-  }
+	}
 end
 
 return M

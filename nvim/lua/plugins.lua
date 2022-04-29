@@ -7,6 +7,7 @@ function M.setup()
 	-- packer.nvim configuration
 	local conf = {
 		display = {
+
 			open_fn = function()
 				return require("packer.util").float { border = "rounded" }
 			end,
@@ -39,6 +40,8 @@ function M.setup()
 	-- Plugins
 	local function plugins(use)
 		use { "wbthomason/packer.nvim" }
+		-- Performance
+		use { "lewis6991/impatient.nvim" }
 		use { "nvim-lua/plenary.nvim", module = "plenary" }
 		-- WhichKey
 		use {
@@ -166,12 +169,13 @@ function M.setup()
 				"hrsh7th/cmp-nvim-lsp-signature-help",
 				{
 					"L3MON4D3/LuaSnip",
-					wants = "friendly-snippets",
+					wants = { "friendly-snippets", "vim-snippets" },
 					config = function()
 						require("config.luasnip").setup()
 					end,
 				},
 				"rafamadriz/friendly-snippets",
+				"honza/vim-snippets",
 			},
 			disable = false,
 		}
@@ -259,6 +263,42 @@ function M.setup()
 		use "lewis6991/gitsigns.nvim"
 		use "kdheepak/lazygit.nvim"
 
+		-- Go
+		use {
+			"ray-x/go.nvim",
+			ft = { "go" },
+			config = function()
+				require("go").setup()
+			end,
+		}
+
+		use { "nathom/filetype.nvim" }
+		use { 'nvim-treesitter/nvim-treesitter-refactor' }
+		use { "p00f/nvim-ts-rainbow" }
+
+		use {
+			'romgrk/nvim-treesitter-context',
+			config = function()
+				require('treesitter-context.config').setup { enable = true }
+			end
+		}
+
+		use {
+			"windwp/nvim-ts-autotag",
+			config = function()
+				require("nvim-ts-autotag").setup({ enable = true })
+			end
+		}
+
+		use { 'RRethy/nvim-treesitter-textsubjects' }
+		use {
+			"vuki656/package-info.nvim",
+			requires = "MunifTanjim/nui.nvim",
+			config = function()
+				require("package-info").setup()
+			end,
+		}
+
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
 			require("packer").sync()
@@ -268,6 +308,7 @@ function M.setup()
 	packer_init()
 
 	local packer = require "packer"
+	pcall(packer, "impatient")
 	packer.init(conf)
 	packer.startup(plugins)
 end
