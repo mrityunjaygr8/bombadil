@@ -298,6 +298,15 @@ function M.setup()
 				require("package-info").setup()
 			end,
 		}
+		-- Terminal
+		use {
+			"akinsho/toggleterm.nvim",
+			keys = { [[<C-\>]] },
+			cmd = { "ToggleTerm", "TermExec" },
+			config = function()
+				require("config.toggleterm").setup()
+			end,
+		}
 
 		if packer_bootstrap then
 			print "Restart Neovim required after installation!"
