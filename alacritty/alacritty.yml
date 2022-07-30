@@ -1,14 +1,8 @@
 font:
-  size: 13
+  size: 16
   normal:
-    # family: IBM Plex Mono Medium
-    # family: Hack Nerd Font Mono
-    # family: JetBrains Mono
-    family: Recursive Mono Linear Static
     style: Regular
-  bold:
-    family: Recursive Mono Linear Static
-    style: Bold
+    family: Input Mono
 
 shell:
   program: /bin/fish
@@ -27,25 +21,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x6E6C7C'
-    red:     '0xE28C8C'
-    green:   '0xB3E1A3'
-    yellow:  '0xEADDA0'
-    blue:    '0xA4B9EF'
+    black: '0x6E6C7C'
+    red: '0xE28C8C'
+    green: '0xB3E1A3'
+    yellow: '0xEADDA0'
+    blue: '0xA4B9EF'
     magenta: '0xC6AAE8'
-    cyan:    '0xF0AFE1'
-    white:   '0xD7DAE0'
+    cyan: '0xF0AFE1'
+    white: '0xD7DAE0'
 
   # Bright colors
   bright:
-    black:   '0x6E6C7C'
-    red:     '0xE28C8C'
-    green:   '0xB3E1A3'
-    yellow:  '0xEADDA0'
-    blue:    '0xA4B9EF'
+    black: '0x6E6C7C'
+    red: '0xE28C8C'
+    green: '0xB3E1A3'
+    yellow: '0xEADDA0'
+    blue: '0xA4B9EF'
     magenta: '0xC6AAE8'
-    cyan:    '0xF0AFE1'
-    white:   '0xD7DAE0'
+    cyan: '0xF0AFE1'
+    white: '0xD7DAE0'
 
   indexed_colors:
     - { index: 16, color: '0xECBFBD' }
