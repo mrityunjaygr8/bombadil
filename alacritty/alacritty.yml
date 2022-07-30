@@ -3,6 +3,8 @@ font:
   normal:
     style: Regular
     family: Input Mono
+  bold:
+    family: IBM Plex Mono
 
 shell:
   program: /bin/fish
