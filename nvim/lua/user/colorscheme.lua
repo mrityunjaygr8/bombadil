@@ -1,7 +1,8 @@
-local colorscheme = "catppuccin"
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+local status_ok, catpuccin = pcall(require, "catppuccin")
 if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
+
+vim.g.catppuccin_flavour = "mocha"
+catpuccin.setup()
+vim.cmd([[colorscheme catppuccin]])
