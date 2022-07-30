@@ -7,3 +7,7 @@
     autocmd FileType qf set nobuflisted
   augroup end
   ]]
+
+vim.cmd [[
+  autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+]]
