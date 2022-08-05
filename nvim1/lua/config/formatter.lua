@@ -27,7 +27,7 @@ require("formatter").setup({
       function()
         return {
           exe = "prettier",
-          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
           stdin = true,
         }
       end,
@@ -37,7 +37,7 @@ require("formatter").setup({
       function()
         return {
           exe = "prettier",
-          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
           stdin = true,
         }
       end,
@@ -47,7 +47,7 @@ require("formatter").setup({
       function()
         return {
           exe = "prettier",
-          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)), "--single-quote" },
+          args = { "--stdin-filepath", vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)) },
           stdin = true,
         }
       end,
@@ -67,6 +67,15 @@ require("formatter").setup({
           exe = "goimports",
           args = { "-w", vim.api.nvim_buf_get_name(0) },
           stdin = false,
+        }
+      end,
+    },
+    rust = {
+      rustfmt = function()
+        return {
+          exe = "rustfmt",
+          args = { "--emit=stdout" },
+          stdin = true,
         }
       end,
     },

@@ -65,9 +65,21 @@ return require("packer").startup(function(use)
   })
   use("RRethy/vim-illuminate")
   use("christoomey/vim-system-copy")
-  use({ "tami5/lspsaga.nvim", branch = "nvim51" })
+  use({ "tami5/lspsaga.nvim" })
   use({ "tpope/vim-surround" })
   use("mhartington/formatter.nvim")
+  use({
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup({
+        enabled = true,
+        languages = {
+          typescriptreact = require("neogen.configurations.typescript"),
+        },
+      })
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
