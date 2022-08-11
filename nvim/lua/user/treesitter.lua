@@ -3,9 +3,28 @@ if not status_ok then
   return
 end
 
-
-configs.setup {
-  ensure_installed = {"python", "lua", "bash", "c", "css", "dockerfile", "fish", "go", "hcl", "http", "javascript", "json", "rust", "scss", "toml", "tsx", "typescript", "yaml"},
+configs.setup({
+  ensure_installed = {
+    "python",
+    "lua",
+    "bash",
+    "c",
+    "css",
+    "dockerfile",
+    "fish",
+    "go",
+    "hcl",
+    "http",
+    "javascript",
+    "json",
+    "rust",
+    "scss",
+    "toml",
+    "tsx",
+    "typescript",
+    "yaml",
+    "nix",
+  },
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = {
@@ -28,5 +47,5 @@ configs.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
-  }
-}
+  },
+})
