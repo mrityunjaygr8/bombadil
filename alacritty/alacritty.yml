@@ -1,10 +1,12 @@
 font:
   size: 16
   normal:
-    style: Regular
-    family: Input Mono
+    # style: Regular
+    family: JetBrainsMono Nerd Font
   bold:
-    family: IBM Plex Mono
+    # family: IBM Plex Mono
+    style: Bold
+    family: JetBrainsMono Nerd Font
 
 shell:
   program: /bin/fish
