@@ -11,6 +11,7 @@ font:
 shell:
   program: /bin/fish
 
+# everblush
 colors:
   primary:
     background: '0x141b1e'

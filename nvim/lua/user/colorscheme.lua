@@ -1,4 +1,4 @@
-local status_ok, catpuccin = pcall(require, "everblush")
+local status_ok, everblush = pcall(require, "everblush")
 if not status_ok then
   return
 end
