@@ -101,6 +101,7 @@ return packer.startup(function(use)
   use("anuvyklack/pretty-fold.nvim")
   use({ "anuvyklack/fold-preview.nvim", requires = "anuvyklack/keymap-amend.nvim" })
   use("norcalli/nvim-colorizer.lua")
+  use("kylechui/nvim-surround")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
